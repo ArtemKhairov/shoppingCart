@@ -1,0 +1,42 @@
+{{#if products}}
+<div class="col-sm-6 col-md-6 col-lg-6 offset-md-3 offset-sm-3 offset-lg-3">
+  <div class="alert alert-success" role="alert">
+    <ul class="list-group ">
+      {{#each products}}
+      <li class="list-group-item">
+        <strong>{{this.item.title}}</strong>
+        <span class="label label-success">${{this.price}}</span>
+        {{!-- <div class="btn-group">
+        <button class="btn btn-primary btn-xs dropdown-toogle" type="button">Action</button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Reduce by 1</a></li>
+          <li><a href="#">Remove All</a></li>
+        </ul>
+      </div> --}}
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <a class="dropdown-item" href="/reduce/{{this.item._id}}">Reduce by 1</a>
+            <a class="dropdown-item" href="/remove/{{this.item._id}}">Remove All</a>
+          </div>
+        </div>
+        <span class=" badge badge-secondary badge-pill">{{this.qty}}</span>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+<div class="col-sm-6 col-md-6 col-lg-6 offset-md-3 offset-sm-3 offset-lg-3">
+  <strong>Total:{{totalPrice}}</strong>
+</div>
+<div class="col-sm-6 col-md-6 col-lg-6 offset-md-3 offset-sm-3 offset-lg-3">
+  <a href="/checkout" type="button" class="btn btn-success">Checkout</a>
+</div>
+{{else}}
+<div class="col-sm-6 col-md-6 col-lg-6 offset-md-3 offset-sm-3 offset-lg-3">
+  <h2>No Items in Cart</h2>
+</div>
+{{/if}}

@@ -1,0 +1,27 @@
+.card-text {
+  color: #888888;
+}
+
+/* футер карточки кнопка покупки и цена */
+.card-price {
+  display: flex;
+  justify-content: space-between;
+}
+.card img {
+  object-fit: cover;
+}
+
+/* Форма регистрации */
+.form-signup .form-control {
+  margin: auto;
+  margin-bottom: 8px;
+  width: auto;
+}
+.form-signup .btn-block {
+  margin: auto;
+  margin-top: 20px;
+  width: auto;
+}
+.form-signup h1 {
+  margin-bottom: 20px;
+}
